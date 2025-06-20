@@ -1,0 +1,84 @@
+import { loadScript } from "../../../../loadScripts.js";
+export default () => {
+  const views = `
+    <div class="newProjectTitle" >
+        <h2>NUEVO PROYECTO</h2>
+      </div>
+      <div class="creationInterface">
+        <div class="inputs">
+          <div class="projectTitleBox" id="projectTitleBox">
+                  <label for="projectTitle" class="projectTitleLabel">Titulo</label>
+                  <input
+                    type="text"
+                    id="projectTitle"
+                    name="projectTitle"
+                    class="projectTitle"
+                    required
+                  />
+                  <p id = "errorMsgTitle" class = "errorMsg"></p>
+          </div>
+          <div class="projectDescriptionBox" id="projectDescriptionBox">
+                  <label for="projectDescription" class="projectDescriptionLabel">Descripcion</label>
+                  <input
+                    type="text"
+                    id="projectDescription"
+                    name="projectDescription"
+                    class="projectDescription"
+                    required
+                  />
+                  <p id = "errorMsgDescription" class = "errorMsg"></p>
+          </div>
+          <div class="projectAmountbox" id="projectAmountbox">
+                  <label for="projectAmount" class="projectAmountLabel">Monto</label>
+                  <input
+                    type="number"
+                    id="projectAmount"
+                    name="projectAmount"
+                    class="projectAmount"
+                    required
+                  />
+                  <p id = "errorMsgAmount" class = "errorMsg"></p>
+          </div>
+          <div class="projectDurationBox" id="projectDurationbox">
+                  <label for="projectDuration" class="projectDurationLabel">Duracion</label>
+                  <input
+                    type="number"
+                    id="projectDuration"
+                    name="projectDuration"
+                    class="projectDuration"
+                    required
+                  />
+                  <p id = "errorMsgDuration" class = "errorMsg"></p>
+          </div>
+          <div class="projectAreaBox">
+            <label for="projectAreaLabel" class="projectAreaLabel">Area</label>
+            <select id="projectArea" class="projectArea">
+              <option value="1">Finanzas</option>
+              <option value="2">Tecnología</option>
+              <option value="3">Recursos Humanos</option>
+              <option value="4">Operaciones</option>
+            </select>
+          </div>
+
+          <div class="projectTypebox">
+            <label for="projectTypeLabel" class="projectTypeLabel">Tipo</label>
+            <select id="projectType" class="projectType">
+              <option value="1">Mejora de Procesos</option>
+              <option value="2">Innovación y Desarrollo</option>
+              <option value="3">Infraestructura</option>
+              <option value="4">Capacitación Interna</option>
+            </select>
+          </div>
+          <div class="createButtonBox" >
+            <button type="submit" class="createButton" id="createButton">Crear</button>
+          </div>
+        </div>
+  `;
+  const sectionElement = document.createElement("Section");
+  sectionElement.setAttribute("class", "myProjectsSection");
+  sectionElement.innerHTML = views;
+  loadScript(
+    "../../../../views/projects/views/createProject/createProjectLogic.js"
+  );
+  return sectionElement;
+};

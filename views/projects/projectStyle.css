@@ -1,0 +1,213 @@
+.optionsBox {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  width: 30vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #2a9ae0;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+
+.optionsBox .optionsBoard {
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.optionsBox .buttonsOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333;
+  width: 25vh;
+  height: 60vh;
+  border-radius: 5px;
+  padding-top: 1rem;
+  gap: 1rem;
+}
+
+.optionsBox .buttonsOptions button {
+  background-color: white;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  width: 70%;
+  height: 2rem;
+  border: none;
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.optionsBox .buttonsOptions button:hover {
+  background-color: #e4e3e3;
+}
+
+.projectSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100%;
+  gap: 2rem;
+}
+
+.projectSection .filtersBox {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  padding: 1.5rem;
+  height: 60vh;
+  width: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+.projectSection .filtersTitle {
+  font-size: 25px;
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #2a9ae0;
+}
+.projectSection .filtersBox .filtersInterface {
+  display: flex;
+  flex-direction: row;
+}
+.projectSection .filtersBox .filtersInterface .filters {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 50vh;
+  width: 25vh;
+  border: solid 5px white;
+  background-color: #2a9ae0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.projectSection .filtersBox .filtersInterface .filters .nameFilter {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+}
+.projectSection .filtersBox .filtersInterface .filters .nameFilter label {
+  color: white;
+  font-weight: bold;
+}
+
+.projectSection .filtersBox .filtersInterface .filters .nameFilter input {
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  height: 2rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.projectSection .filtersBox .filtersInterface .filters .statusFilterDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+}
+
+.projectSection .filtersBox .filtersInterface .filters .statusFilterDiv label {
+  color: white;
+  font-weight: bold;
+}
+
+.projectSection .filtersBox .filtersInterface .filters .statusFilterDiv select {
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  height: 2rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.projectSection .filtersBox .filtersInterface .filters .approverFilterDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+}
+
+.projectSection
+  .filtersBox
+  .filtersInterface
+  .filters
+  .approverFilterDiv
+  label {
+  color: white;
+  font-weight: bold;
+}
+
+.projectSection
+  .filtersBox
+  .filtersInterface
+  .filters
+  .approverFilterDiv
+  select {
+  font-weight: bold;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  height: 2rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.projectSection .filtersBox .filtersInterface .filters .buttonDiv {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.projectSection .filtersBox .filtersInterface .filters .buttonDiv button {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  height: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.projectSection .filtersBox .filtersInterface .filters .buttonDiv button:hover {
+  background-color: #474747;
+}
+
+.projectSection .filtersBox .filtersInterface .projectsList {
+  display: flex;
+  align-items: center;
+  width: 50vh;
+  background-color: white;
+  color: #333;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.projectSection .filtersBox .filtersInterface .projectsList li {
+  list-style: none;
+  height: 4.5vh;
+  border-bottom: solid 2px #333;
+  width: 45vh;
+}
