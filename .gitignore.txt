@@ -1,0 +1,36 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+
+# Archivos de entorno (si los usás)
+.env
+.env.*
+
+# Node (si usás npm para alguna herramienta como Prettier, ESLint, Vite, etc)
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Archivos de build o distribución
+dist/
+build/
+
+# Archivos del editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Cache de navegador o herramientas
+.cache/
+*.cache
+*.tmp
+
+# Otros
+*.local
+*.bak
+*.swp
