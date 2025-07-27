@@ -1,63 +1,33 @@
-.optionsBox {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  height: 60vh;
-  width: 30vh;
-  align-items: center;
-  justify-content: center;
-  background-color: #2a9ae0;
-  border-radius: 10px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
-  padding: 1rem;
-}
-
-.optionsBox .optionsBoard {
-  font-weight: bold;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.optionsBox .buttonsOptions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #333;
-  width: 25vh;
-  height: 60vh;
-  border-radius: 5px;
-  padding-top: 1rem;
-  gap: 1rem;
-}
-
-.optionsBox .buttonsOptions button {
-  background-color: white;
-  cursor: pointer;
-  color: black;
-  font-weight: bold;
-  width: 70%;
-  height: 2rem;
-  border: none;
-  border-radius: 2px;
-  transition: background-color 0.3s ease;
-}
-
-.optionsBox .buttonsOptions button:hover {
-  background-color: #e4e3e3;
-}
-
 .projectSection {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 80vh;
   width: 100%;
   gap: 2rem;
+}
+
+.projectSection .myProjectsSection .createProjectsContainer {
+  width: 100%;
+  display: flex;
+}
+
+.projectSection .myProjectsSection .createProjects {
+  background-color: #2a9ae0;
+  color: white;
+  cursor: pointer;
+  height: 2rem;
+  width: 7rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.projectSection .myProjectsSection .createProjects:hover {
+  background-color: #22a7fa;
 }
 
 .projectSection .filtersBox {
@@ -66,7 +36,7 @@
   flex-direction: column;
   background-color: #333;
   padding: 1.5rem;
-  height: 60vh;
+  height: 65vh;
   width: 80vh;
   border-radius: 10px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);

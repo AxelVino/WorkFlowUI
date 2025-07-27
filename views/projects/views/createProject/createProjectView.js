@@ -1,8 +1,19 @@
 import { loadScript } from "../../../../loadScripts.js";
+import { loadStyle } from "../../../../loadStyles.js";
 export default () => {
   const views = `
+            <div>
+                <span class="closeCreate">&times;</span>
+            </div>
+  <div id ="createBox" class="createBox">
     <div class="newProjectTitle" >
         <h2>NUEVO PROYECTO</h2>
+        <p class ="helpInfo"> Complete los siguientes campos para crear un nuevo proyecto<br>
+        <strong>Asegurese de ingresar los datos correctos</strong>
+        </p>
+        <div class="createButtonBox" >
+            <button type="submit" class="createButton" id="createButton">Crear</button>
+          </div>
       </div>
       <div class="creationInterface">
         <div class="inputs">
@@ -69,10 +80,8 @@ export default () => {
               <option value="4">Capacitación Interna</option>
             </select>
           </div>
-          <div class="createButtonBox" >
-            <button type="submit" class="createButton" id="createButton">Crear</button>
-          </div>
         </div>
+      </div>
   `;
   const sectionElement = document.createElement("Section");
   sectionElement.setAttribute("class", "myProjectsSection");
@@ -80,5 +89,6 @@ export default () => {
   loadScript(
     "../../../../views/projects/views/createProject/createProjectLogic.js"
   );
+  loadStyle("/views/projects/views/createProject/createProjectStyle.css");
   return sectionElement;
 };

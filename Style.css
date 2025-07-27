@@ -581,7 +581,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(83, 83, 83, 0.5);
+  background-color: rgba(29, 29, 29, 0.5);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -660,7 +660,8 @@ footer {
 
 .errorMsg {
   display: none;
-  color: black;
+  margin-top: 0.2rem;
+  color: rgb(223, 29, 29);
   font-weight: bold;
   font-size: 15px;
 }

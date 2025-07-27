@@ -3,16 +3,6 @@ import { loadScript } from "../../loadScripts.js";
 
 export default () => {
   const views = `
-  <div class="optionsBox">
-    <div class="optionsBoard" >
-      <h2>OPCIONES</h2>
-    </div>
-    <div class="buttonsOptions">
-      <button class ="myProjects" id ="myProjects"> Mis proyectos </button>
-      <button class ="evaluateProjects" id ="evaluateProjects"> Evaluar proyectos</button>
-      <button class ="createProjects" id ="createProjects"> Crear proyectos</button>
-    </div>
-  </div>
   <div class="filtersBox" id="viewBox">
     <div class="myProjectsSection">
       <div class="filtersTitle" >
@@ -71,6 +61,10 @@ export default () => {
                             <li></li>      
           </ul>
         </div>
+      </div>
+      <div class="createProjectsContainer">
+        <button class ="createProjects" id ="createProjects">Crear proyectos</button>
+      </div>
     </div>
   </div>
   `;

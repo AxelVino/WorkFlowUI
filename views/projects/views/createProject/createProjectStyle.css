@@ -1,0 +1,130 @@
+.createBox {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #2a9ae0;
+  justify-content: start;
+  height: 50vh;
+  width: 65vh;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: solid 5px #f5f5f5;
+}
+
+.createBox .newProjectTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  width: 100%;
+  flex: 1;
+}
+
+.createBox .newProjectTitle .helpInfo {
+  color: white;
+  width: 80%;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.createBox .newProjectTitle h2 {
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: end;
+}
+
+.createBox .newProjectTitle button {
+  display: flex;
+  width: 7rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeCreate {
+  position: relative;
+  right: 1rem;
+  top: 2.5rem;
+  color: #000000;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+  margin: 0;
+}
+
+.closeCreate:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.creationInterface {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.creationInterface .inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.creationInterface .inputs > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.creationInterface label {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.creationInterface input,
+.creationInterface select {
+  background-color: #333;
+  color: white;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.creationInterface input:focus,
+.creationInterface select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.creationInterface .errorMsg {
+  color: #ff4444;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.createButton {
+  width: 50%;
+  align-self: center;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.createButton:hover {
+  background-color: #444;
+}
