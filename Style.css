@@ -55,75 +55,6 @@ nav a {
   font-size: 20px;
 }
 
-nav .projects {
-  visibility: hidden;
-}
-
-.user {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.user .userName {
-  font-size: 20px;
-  display: flex;
-  border-bottom: solid 3px #2a9ae0;
-}
-
-.user .userButtons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.user .userButtons .btnLogin {
-  display: flex;
-  background-color: #333;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-left: solid 4px #333;
-  border-right: solid 4px #333;
-  transition: border 0.3s ease;
-}
-
-.user .userButtons .btnLogin:hover {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-left: solid 4px #2a9ae0;
-  border-right: solid 4px #2a9ae0;
-}
-
-.user .userButtons .btnLogOut {
-  display: none;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: #333;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  border-left: solid 4px #333;
-  border-right: solid 4px #333;
-  margin: 1rem;
-  position: relative;
-  transition: border 0.3s ease;
-}
-
-.user .userButtons .btnLogOut:hover {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin: 1rem;
-  border-left: solid 4px #2a9ae0;
-  border-right: solid 4px #2a9ae0;
-}
-
 nav a::after {
   content: "";
   position: absolute;
@@ -139,6 +70,69 @@ nav a::after {
 
 nav a:hover::after {
   transform: scaleX(1);
+}
+
+nav .projects {
+  visibility: hidden;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user .userName {
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  border-bottom: solid 3px #2a9ae0;
+  margin-bottom: 1rem;
+}
+
+.user .userButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user .userButtons .btnLogin {
+  display: flex;
+  background-color: #2a9ae0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user .userButtons .btnLogin:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.user .userButtons .btnLogOut {
+  display: none;
+  background-color: #2a9ae0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+.user .userButtons .btnLogOut:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }
 
 .homeSection {
