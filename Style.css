@@ -585,30 +585,35 @@ footer {
   z-index: 1000;
   justify-content: center;
   align-items: center;
+  border: none;
 }
 
 .dialogDiv {
   display: flex;
   flex-direction: column;
   background-color: #2a9ae0;
-  width: 20rem;
-  border-radius: 20px;
+  height: 20vh;
+  width: 30vh;
+  border-radius: 25px;
   padding: 1rem;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
-  border: 2px solid #333;
+  border: 3px solid #333;
 }
 
 .dialogRoot .dialogDiv .dialogLogin {
   display: flex;
   flex-direction: column;
-  text-align: start;
   margin: auto;
+  align-items: center;
 }
 
 .dialogRoot .dialogDiv .dialogLogin .idUser {
+  width: 100%;
   font-size: 25px;
   font-weight: 700;
   color: white;
+  margin-bottom: 0.5rem;
+  text-align: start;
 }
 
 .dialogRoot .dialogDiv .dialogLogin input {
@@ -623,12 +628,11 @@ footer {
 
 .dialogRoot .dialogDiv .dialogLogin .dialogBtn {
   color: white;
-  width: 100%;
+  width: 50%;
   font-weight: bold;
   font-size: 16px;
   background-color: #333;
   border: none;
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
   padding: 5px;
   margin: 16px 0;
   transition: background-color 0.3s ease;
@@ -636,12 +640,12 @@ footer {
 }
 
 .dialogRoot .dialogDiv .dialogLogin .dialogBtn:hover {
-  background-color: #1b1b1b;
+  background-color: #444;
 }
 
 .close {
   position: relative;
-  right: 15px;
+  right: 10px;
   color: #000000;
   float: right;
   font-size: 28px;
@@ -668,4 +672,54 @@ footer {
 
 .errorVisible {
   display: flex;
+}
+
+.loading-container {
+  height: 20vh;
+  width: 30vh;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  padding: 1rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  border: 3px solid #fafafa;
+}
+
+.loading-container p {
+  color: #f4f4f4;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.loading-spinner {
+  width: 6rem;
+  height: 6rem;
+  border: 10px solid #2a9ae0;
+  border-top: 4px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.overlay-blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  z-index: 9998;
+  pointer-events: all;
 }

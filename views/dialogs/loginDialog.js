@@ -5,7 +5,7 @@ export default () => {
             </div>
             <div class="dialogLogin">
                 <label for="id" class ="idUser">ID USUARIO</label>
-                <input type="number" id="id" name="id" required placeholder="Ej:1,2,3,4...">
+                <input type="number" min=1 id="id" name="id" required placeholder="Ej:1,2,3,4...">
                 <p class ="errorMsg" id="errorMsg"></p>
                 <input type="submit" id ="dialogBtn" class="dialogBtn" value="Aceptar">
             </div>`;

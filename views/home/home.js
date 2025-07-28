@@ -45,7 +45,7 @@ export default () => {
           </div>
           <div class="product">
             <div class="productPhoto">
-              <img src="/img/placeholder.jpeg" alt="product photo" />
+              <img src="/img/project.png" alt="product photo" />
             </div>
             <div class="productDescription">
               <h4>

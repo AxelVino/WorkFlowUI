@@ -6,6 +6,36 @@ import { inicializeProjectSection } from "./views/projects/projectsLogic.js";
 
 let savedId = null;
 
+const lazyLoad = () => {
+  const dialog = document.getElementById("dialogRoot");
+  dialog.innerHTML = "";
+
+  // Crear overlay para bloquear clics
+  const blocker = document.createElement("div");
+  blocker.className = "overlay-blocker";
+  blocker.id = "clickBlocker";
+
+  // Crear contenedor de loading
+  const loadingContainer = document.createElement("div");
+  loadingContainer.id = "loadingContainer";
+  loadingContainer.className = "loading-container";
+  loadingContainer.style.display = "flex";
+
+  const spinner = document.createElement("div");
+  spinner.className = "loading-spinner";
+
+  const text = document.createElement("p");
+  text.textContent = "Validando usuario...";
+
+  loadingContainer.appendChild(spinner);
+  loadingContainer.appendChild(text);
+
+  // Agregar todo al DOM
+  document.body.appendChild(blocker); // para bloquear clics globales
+  dialog.appendChild(loadingContainer);
+  dialog.style.display = "flex";
+};
+
 const inicializeHomeSection = () => {
   // Variables globales
   let selectedClient = null;
@@ -84,6 +114,8 @@ const inicializeHomeSection = () => {
     async function handleAcceptClick() {
       let input = document.getElementById("id");
       const savedValue = parseInt(input.value);
+      const dialogBtn = document.getElementById("dialogBtn");
+      errorMsg.classList.remove("errorVisible");
 
       if (isNaN(savedValue)) {
         errorMsg.textContent = "Porfavor, ingrese un ID ";
@@ -92,24 +124,38 @@ const inicializeHomeSection = () => {
       }
 
       try {
+        lazyLoad();
+
+        document.getElementById("loadingContainer").style.display = "flex";
+
+        dialogBtn.disabled = true;
+
         const response = await fetch(EP_GETCLIENT);
         if (!response.ok) throw new Error("Error en la respuesta de la red");
 
         const data = await response.json();
         const client = data.find((user) => user.id === savedValue);
 
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+
+        dialogBtn.disabled = false;
+
         if (client) {
           selectedClient = client;
           savedId = client.id;
           window.location.hash = "#/home";
-          // Actualiza la UI
+
           updateUIForClient(client);
+          document.getElementById("clickBlocker")?.remove();
         } else {
           errorMsg.textContent = "ID Invalido";
           errorMsg.classList.add("errorVisible");
         }
       } catch (error) {
+        dialogBtn.disabled = false;
         console.error("Error en la solicitud fetch:", error);
+        errorMsg.textContent = "Error al validar usuario";
+        errorMsg.classList.add("errorVisible");
       }
     }
 
@@ -122,11 +168,7 @@ const inicializeHomeSection = () => {
     btnLogOut.addEventListener("click", handleLogOutClick);
   };
 
-  //logica de inicio de sesion
-
   btnLogin.addEventListener("click", defaultLoad);
-
-  //Boton para ocultar header
 
   projects.addEventListener("click", Disable);
 
