@@ -8,7 +8,7 @@
   gap: 2rem;
 }
 
-.projectSection .myProjectsSection .createProjectsContainer {
+.projectSection .myProjectsSection .buttonsContainer {
   width: 100%;
   display: flex;
 }
@@ -177,4 +177,57 @@
   height: 4.5vh;
   border-bottom: solid 2px #333;
   width: 45vh;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.projectSection .filtersBox .filtersInterface .projectsList li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilos para la paginación */
+.paginationContainer {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  margin-left: 4.5rem;
+}
+
+.paginationButton {
+  background-color: #2a9ae0;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  height: 2rem;
+  width: 10rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.paginationButton:hover {
+  background-color: #22a7fa;
+}
+
+.paginationButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pageNumber {
+  font-size: 1.1rem;
+  width: 8rem;
+  height: 2rem;
+  padding: 0.3rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #333;
+  background-color: #fafafa;
+  border-radius: 10px;
+  text-align: center;
 }

@@ -62,8 +62,12 @@ export default () => {
           </ul>
         </div>
       </div>
-      <div class="createProjectsContainer">
-        <button class ="createProjects" id ="createProjects">Crear proyectos</button>
+      <div class="buttonsContainer">
+        <div class ="creationContainer" id ="creationContainer">
+          <button class ="createProjects" id ="createProjects">Crear proyectos</button>
+        </div>
+        <div class ="paginationContainer" id ="paginationContainer">
+        </div>
       </div>
     </div>
   </div>

@@ -5,6 +5,7 @@ import { Disable } from "./utils.js";
 import { inicializeProjectSection } from "./views/projects/projectsLogic.js";
 
 let savedId = null;
+window.savedId = null; // Hacer accesible globalmente
 
 const lazyLoad = () => {
   const dialog = document.getElementById("dialogRoot");
@@ -82,6 +83,7 @@ const inicializeHomeSection = () => {
       userName.textContent = "";
       selectedClient = null;
       savedId = null;
+      window.savedId = null; // Restablecer la variable global
       projects.style.visibility = "hidden";
       btnLogin.style.display = "flex";
       userName.style.display = "none";
@@ -143,6 +145,7 @@ const inicializeHomeSection = () => {
         if (client) {
           selectedClient = client;
           savedId = client.id;
+          window.savedId = client.id; // Actualizar la variable global
           window.location.hash = "#/home";
 
           updateUIForClient(client);

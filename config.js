@@ -1,5 +1,5 @@
 const EP_GETCLIENT = "https://localhost:7078/api/User";
-const EP_GETPROJECT = "";
+const EP_GETPROJECT = "https://localhost:7078/api/Project";
 const EP_POSTPROJECT = "https://localhost:7078/api/Project";
 const EP_PATCHPROJECT = "";
 const EP_PATCHPROJECTTASK = "";
