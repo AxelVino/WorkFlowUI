@@ -1,8 +1,10 @@
 import createProjectView from "./views/createProject/createProjectView.js";
-import { EP_GETPROJECT } from "../../config.js";
+import { EP_GETPROJECT, EP_GETPROJECTBYID } from "../../config.js";
+import projectDetailsView from "./views/projectDetails/projectDetailsView.js";
 
 const inicializeProjectSection = () => {
   let url = EP_GETPROJECT;
+  let urlById = EP_GETPROJECTBYID;
 
   const createProject = document.getElementById("createProjects");
   const searchButton = document.querySelector(".sendButton");
@@ -108,9 +110,13 @@ const inicializeProjectSection = () => {
       const listItem = document.createElement("li");
       listItem.textContent = project.title;
       listItem.className = "project-item";
-      listItem.addEventListener("click", () => {
-        // Aquí se puede agregar la lógica para mostrar detalles del proyecto
-        console.log("Proyecto seleccionado:", project);
+      listItem.addEventListener("click", async () => {
+        let projectSpecific = await searchById(project.id);
+        console.log("Proyecto seleccionado:", projectSpecific);
+        let dialog = document.getElementById("dialogRoot");
+        dialog.innerHTML = "";
+        dialog.appendChild(projectDetailsView(projectSpecific));
+        dialog.style.display = "flex";
       });
       projectsList.appendChild(listItem);
     }
@@ -166,6 +172,39 @@ const inicializeProjectSection = () => {
     } catch (error) {
       console.error("Error al buscar proyectos:", error);
       projectsList.innerHTML = "<li>Error al cargar proyectos</li>";
+    }
+  };
+
+  const searchById = async (id) => {
+    const url = `${urlById}/${id}`; // encodeURIComponent no es necesario para un GUID, pero no molesta.
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 10000);
+
+    try {
+      const res = await fetch(url, {
+        method: "GET",
+        headers: { Accept: "application/json" },
+        cache: "no-store",
+        signal: controller.signal,
+      });
+
+      if (!res.ok) {
+        let serverMessage = "";
+        try {
+          serverMessage = (await res.json())?.message ?? "";
+        } catch {}
+        const extra = serverMessage || (await res.text().catch(() => ""));
+        // ej.: tu backend puede mandar "invalid data" en 400
+        throw new Error(
+          `HTTP ${res.status} ${res.statusText}${extra ? `: ${extra}` : ""}`
+        );
+      }
+
+      if (res.status === 204) return null;
+      return await res.json();
+    } finally {
+      clearTimeout(timer);
     }
   };
 
